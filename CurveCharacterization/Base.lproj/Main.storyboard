@@ -704,7 +704,7 @@
         <!--Split View Controller-->
         <scene sceneID="kX1-bV-XvB">
             <objects>
-                <splitViewController id="9uh-nz-Web" sceneMemberID="viewController">
+                <splitViewController id="9uh-nz-Web" customClass="SplitViewController" customModule="CurveCharacterization" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="ci6-tG-kbH"/>
                         <splitViewItem id="tPQ-RT-el9"/>
@@ -729,10 +729,13 @@
         <!--Curve View Controller-->
         <scene sceneID="0K6-TK-Rdf">
             <objects>
-                <viewController id="vaS-kh-2ka" userLabel="Curve View Controller" sceneMemberID="viewController">
+                <viewController id="vaS-kh-2ka" userLabel="Curve View Controller" customClass="CurveViewController" customModule="CurveCharacterization" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="mw3-vM-Lct" customClass="CurveView" customModule="CurveCharacterization" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="curveController" destination="vaS-kh-2ka" id="f9A-kC-Esj"/>
+                        </connections>
                     </view>
                 </viewController>
                 <customObject id="Ftd-ld-63y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -742,10 +745,13 @@
         <!--Characterization View Controller-->
         <scene sceneID="HbX-DY-9lM">
             <objects>
-                <viewController id="PE1-pN-acE" userLabel="Characterization View Controller" sceneMemberID="viewController">
-                    <view key="view" id="b6J-FZ-4OB">
+                <viewController id="PE1-pN-acE" userLabel="Characterization View Controller" customClass="CharacterizationViewController" customModule="CurveCharacterization" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="b6J-FZ-4OB" customClass="CharacterizationView" customModule="CurveCharacterization" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="characterizationController" destination="PE1-pN-acE" id="9wm-Cc-EAh"/>
+                        </connections>
                     </view>
                 </viewController>
                 <customObject id="0fM-2n-0Kc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

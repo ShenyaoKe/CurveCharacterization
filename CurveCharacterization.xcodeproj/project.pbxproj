@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		329508D424011FF70056F8BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329508D324011FF70056F8BD /* AppDelegate.swift */; };
-		329508D624011FF70056F8BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329508D524011FF70056F8BD /* ViewController.swift */; };
+		329508D624011FF70056F8BD /* CurveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329508D524011FF70056F8BD /* CurveViewController.swift */; };
 		329508D824011FF90056F8BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329508D724011FF90056F8BD /* Assets.xcassets */; };
 		329508DB24011FF90056F8BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329508D924011FF90056F8BD /* Main.storyboard */; };
 		329508E724011FF90056F8BD /* CurveCharacterizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329508E624011FF90056F8BD /* CurveCharacterizationTests.swift */; };
@@ -17,6 +17,11 @@
 		32950902240121FE0056F8BD /* BezierCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32950901240121FE0056F8BD /* BezierCurve.swift */; };
 		32950904240122180056F8BD /* NSPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32950903240122180056F8BD /* NSPointExtension.swift */; };
 		3295090724019F2D0056F8BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3295090624019F2D0056F8BD /* CoreGraphics.framework */; };
+		32D0999D2401B43C0038F159 /* CurveCharacterizationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D0999C2401B43C0038F159 /* CurveCharacterizationProcessor.swift */; };
+		32D0999F2401D6250038F159 /* CharacterizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D0999E2401D6250038F159 /* CharacterizationView.swift */; };
+		32D099A12401D8670038F159 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D099A02401D8670038F159 /* SplitViewController.swift */; };
+		32D099A32401EB250038F159 /* CharacterizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D099A22401EB250038F159 /* CharacterizationViewController.swift */; };
+		32D099A52402010A0038F159 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D099A42402010A0038F159 /* NotificationNameExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +44,7 @@
 /* Begin PBXFileReference section */
 		329508D024011FF70056F8BD /* CurveCharacterization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurveCharacterization.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329508D324011FF70056F8BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		329508D524011FF70056F8BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		329508D524011FF70056F8BD /* CurveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveViewController.swift; sourceTree = "<group>"; };
 		329508D724011FF90056F8BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		329508DA24011FF90056F8BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		329508DC24011FF90056F8BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +59,11 @@
 		32950901240121FE0056F8BD /* BezierCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierCurve.swift; sourceTree = "<group>"; };
 		32950903240122180056F8BD /* NSPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPointExtension.swift; sourceTree = "<group>"; };
 		3295090624019F2D0056F8BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		32D0999C2401B43C0038F159 /* CurveCharacterizationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveCharacterizationProcessor.swift; sourceTree = "<group>"; };
+		32D0999E2401D6250038F159 /* CharacterizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterizationView.swift; sourceTree = "<group>"; };
+		32D099A02401D8670038F159 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		32D099A22401EB250038F159 /* CharacterizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterizationViewController.swift; sourceTree = "<group>"; };
+		32D099A42402010A0038F159 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,14 +117,19 @@
 			isa = PBXGroup;
 			children = (
 				329508D324011FF70056F8BD /* AppDelegate.swift */,
-				329508D524011FF70056F8BD /* ViewController.swift */,
 				329508D724011FF90056F8BD /* Assets.xcassets */,
 				329508D924011FF90056F8BD /* Main.storyboard */,
 				329508DC24011FF90056F8BD /* Info.plist */,
 				329508DD24011FF90056F8BD /* CurveCharacterization.entitlements */,
-				329508FF240121E20056F8BD /* CurveView.swift */,
 				32950901240121FE0056F8BD /* BezierCurve.swift */,
 				32950903240122180056F8BD /* NSPointExtension.swift */,
+				32D099A22401EB250038F159 /* CharacterizationViewController.swift */,
+				32D0999E2401D6250038F159 /* CharacterizationView.swift */,
+				32D0999C2401B43C0038F159 /* CurveCharacterizationProcessor.swift */,
+				329508D524011FF70056F8BD /* CurveViewController.swift */,
+				329508FF240121E20056F8BD /* CurveView.swift */,
+				32D099A02401D8670038F159 /* SplitViewController.swift */,
+				32D099A42402010A0038F159 /* NotificationNameExtension.swift */,
 			);
 			path = CurveCharacterization;
 			sourceTree = "<group>";
@@ -276,10 +291,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				32950900240121E20056F8BD /* CurveView.swift in Sources */,
-				329508D624011FF70056F8BD /* ViewController.swift in Sources */,
+				32D0999D2401B43C0038F159 /* CurveCharacterizationProcessor.swift in Sources */,
+				329508D624011FF70056F8BD /* CurveViewController.swift in Sources */,
 				32950902240121FE0056F8BD /* BezierCurve.swift in Sources */,
 				329508D424011FF70056F8BD /* AppDelegate.swift in Sources */,
+				32D099A32401EB250038F159 /* CharacterizationViewController.swift in Sources */,
 				32950904240122180056F8BD /* NSPointExtension.swift in Sources */,
+				32D0999F2401D6250038F159 /* CharacterizationView.swift in Sources */,
+				32D099A12401D8670038F159 /* SplitViewController.swift in Sources */,
+				32D099A52402010A0038F159 /* NotificationNameExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
