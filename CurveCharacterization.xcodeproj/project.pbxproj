@@ -22,6 +22,7 @@
 		32D099A12401D8670038F159 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D099A02401D8670038F159 /* SplitViewController.swift */; };
 		32D099A32401EB250038F159 /* CharacterizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D099A22401EB250038F159 /* CharacterizationViewController.swift */; };
 		32D099A52402010A0038F159 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D099A42402010A0038F159 /* NotificationNameExtension.swift */; };
+		32D099A724029B160038F159 /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D099A624029B160038F159 /* CGFloatExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		32D099A02401D8670038F159 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		32D099A22401EB250038F159 /* CharacterizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterizationViewController.swift; sourceTree = "<group>"; };
 		32D099A42402010A0038F159 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
+		32D099A624029B160038F159 /* CGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				329508FF240121E20056F8BD /* CurveView.swift */,
 				32D099A02401D8670038F159 /* SplitViewController.swift */,
 				32D099A42402010A0038F159 /* NotificationNameExtension.swift */,
+				32D099A624029B160038F159 /* CGFloatExtension.swift */,
 			);
 			path = CurveCharacterization;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				32D0999F2401D6250038F159 /* CharacterizationView.swift in Sources */,
 				32D099A12401D8670038F159 /* SplitViewController.swift in Sources */,
 				32D099A52402010A0038F159 /* NotificationNameExtension.swift in Sources */,
+				32D099A724029B160038F159 /* CGFloatExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

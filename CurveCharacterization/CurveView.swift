@@ -19,6 +19,21 @@ class CurveView: NSView {
         context?.fill(dirtyRect)
         
         drawCurve(context: context!, curve: &curveController!.curve)
+        
+        // Draw inflection points
+        if (curveController!.inflectionPoints.count > 0) {
+            context!.setStrokeColor(red: 1, green: 0, blue: 0, alpha: 1)
+            context!.setFillColor(red: 1, green: 0, blue: 0, alpha: 1)
+            for point in curveController!.inflectionPoints {
+                context!.addEllipse(in: makeRect(center: point))
+            }
+            context!.drawPath(using: .fillStroke)
+            
+        }
+        let attrs = [NSAttributedString.Key.font:NSFont.monospacedSystemFont(ofSize: 16, weight: NSFont.Weight.regular),
+                     NSAttributedString.Key.foregroundColor: NSColor.orange,]
+        let attributedString = NSAttributedString(string: curveController!.inflectionType, attributes: attrs)
+        attributedString.draw(at: NSPoint(x: 4, y: 4))
     }
     
     func drawCurve(context: CGContext, curve: inout CubicBezierCurve) {
@@ -40,23 +55,15 @@ class CurveView: NSView {
         
         // Draw control points
         context.setStrokeColor(red: 0.8, green: 0.6, blue: 0.1, alpha: 1)
-        for i in 0..<4
-        {
-            let pointCenter = curve.controlPointAt(index: i)
-            let pointRadius = CGFloat(3)
-            let pointDiameter = pointRadius * 2
-            context.addRect(NSMakeRect(pointCenter.x - pointRadius,
-                                       pointCenter.y - pointRadius,
-                                       pointDiameter,
-                                       pointDiameter))
+        for i in 0..<4 {
+            context.addRect(makeRect(center: curve.controlPointAt(index: i)))
         }
         context.drawPath(using: .stroke)
 
         // Draw point string
         let attrs = [NSAttributedString.Key.font:NSFont.monospacedSystemFont(ofSize: 13, weight: NSFont.Weight(rawValue: 0)),
                      NSAttributedString.Key.foregroundColor: NSColor.white,]
-        for i in 0..<4
-        {
+        for i in 0..<4 {
 
             let attributedString = NSAttributedString(string: String(format: "P%d", i),
                                                       attributes: attrs)
@@ -86,6 +93,15 @@ class CurveView: NSView {
 
     override func mouseUp(with event: NSEvent) {
         selectedPointIndex = kCFNotFound
+    }
+    
+    func makeRect(center: NSPoint) -> NSRect {
+        let pointRadius = CGFloat(3)
+        let pointDiameter = pointRadius * 2
+        return NSMakeRect(center.x - pointRadius,
+                          center.y - pointRadius,
+                          pointDiameter,
+                          pointDiameter)
     }
     
     @IBOutlet weak var curveController: CurveViewController?

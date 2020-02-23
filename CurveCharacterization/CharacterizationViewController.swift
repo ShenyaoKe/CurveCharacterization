@@ -14,19 +14,20 @@ class CharacterizationViewController: NSViewController {
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onCurveChanged),
-                                               name: .didChangeCurve, object: nil)
+                                               name: .didChangeCurve,
+                                               object: nil)
     }
     
     @objc func onCurveChanged(_ notification: Notification) {
         // process
-        curve = (notification.userInfo?["Curve"] as! CubicBezierCurve)
+        charaterizationProcessor.process(curve: (notification.userInfo!["Curve"] as! CubicBezierCurve))
         
-        
+        NotificationCenter.default.post(name: .didComputeCurveCharacterization,
+                                        object: self,
+                                        userInfo: ["Type": charaterizationProcessor.charaterization as Any,
+                                                   "T1": charaterizationProcessor.t1 as Any,
+                                                   "T2": charaterizationProcessor.t2 as Any])
         view.setNeedsDisplay(view.frame)
-    }
-    
-    func rectAt(index: CFIndex) -> NSRect {
-        return rectAt(point: (curve?.controlPointAt(index: index))!)
     }
     
     func rectAt(point: NSPoint) -> NSRect {
@@ -37,14 +38,9 @@ class CharacterizationViewController: NSViewController {
     }
     
     func b3() -> NSPoint {
-        let v01 = curve!.controlPointAt(index: 0).vectorTo(point: curve!.controlPointAt(index: 1))
-        let v12 = curve!.controlPointAt(index: 1).vectorTo(point: curve!.controlPointAt(index: 2))
-        let v23 = curve!.controlPointAt(index: 2).vectorTo(point: curve!.controlPointAt(index: 3))
-        return NSMakePoint(1 + v01.cross(vector: v23) / v01.cross(vector: v12),
-                           1 + v23.cross(vector: v12) / v01.cross(vector: v12))
+        return charaterizationProcessor.b3!
     }
     
     static let pointRadius = CGFloat(3)
-    weak var curve: CubicBezierCurve?
-    var charaterizationProcessor: CharacterizationViewController?
+    var charaterizationProcessor = CurveCharacterizationProcessor()
 }

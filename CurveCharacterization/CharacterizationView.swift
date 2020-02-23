@@ -22,11 +22,16 @@ class CharacterizationView: NSView {
         context?.addLine(to: NSMakePoint(0.5 * frame.width, frame.height))
         context?.drawPath(using: .stroke)
         
-        context?.setStrokeColor(red: 0.8, green: 0.2, blue: 0.5, alpha: 1.0)
+        context?.setStrokeColor(red: 0.5, green: 0.2, blue: 0.4, alpha: 1.0)
         
+        // Draw three fixed points
         context?.addEllipse(in: characterizationController!.rectAt(point: convertToViewSpace(point: NSMakePoint(0, 0))))
         context?.addEllipse(in: characterizationController!.rectAt(point: convertToViewSpace(point: NSMakePoint(0, 1))))
         context?.addEllipse(in: characterizationController!.rectAt(point: convertToViewSpace(point: NSMakePoint(1, 1))))
+        context?.drawPath(using: .stroke)
+        
+        // Draw the last point
+        context?.setStrokeColor(red: 0.7, green: 0, blue: 0.4, alpha: 1)
         context?.addEllipse(in: characterizationController!.rectAt(point: convertToViewSpace(point: characterizationController!.b3())))
         context?.drawPath(using: .stroke)
     }

@@ -10,4 +10,5 @@ import Foundation
 
 extension Notification.Name {
     static let didChangeCurve = Notification.Name("didChangeCurve")
+    static let didComputeCurveCharacterization = Notification.Name("didComputeCurveCharacterization")
 }
